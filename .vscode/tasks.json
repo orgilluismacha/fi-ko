@@ -1,0 +1,45 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "build",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build",
+			"detail": "webpack"
+		},
+		{
+			"type": "npm",
+			"script": "dev-server",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: webpack-dev-server",
+			"detail": "webpack-dev-server"
+		},
+		{
+			"type": "npm",
+			"script": "serve",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: serve",
+			"detail": "live-server public"
+		},
+		{
+			"type": "npm",
+			"script": "build-playground",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build-playground",
+			"detail": "npx babel src/playground/counter-example.js --out-file=public/scripts/app.js --presets=@babel/preset-env,@babel/preset-react --watch"
+		},
+		{
+			"type": "npm",
+			"script": "dev-server",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: webpack-dev-server",
+			"detail": "webpack-dev-server"
+		}
+	]
+}
