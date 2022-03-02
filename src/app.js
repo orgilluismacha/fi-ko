@@ -25,6 +25,11 @@ const HelpPage = () =>(
     This is my Help component
   </div>
 );
+const NotFoundPage = () =>(
+  <div>
+    404!
+  </div>
+);
 
 
 
@@ -35,6 +40,7 @@ const routes = (
       <Route path="/create" element={<AddExpensePage/>}/>
       <Route path="/edit" element={<EditExpensePage/>}/>
       <Route path="/help" element={<HelpPage/>}/>
+      <Route element={<NotFoundPage/>}/>
     </Routes>
   </BrowserRouter>
 
