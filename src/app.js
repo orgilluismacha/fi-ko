@@ -1,46 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import AppRouter from './routers/AppRouter';
+import configureStore from './store/configureStore';
+import { addExpense } from './actions/expenses';
+import { setTextFilter } from './actions/filters';
+import getVisibleExpenses from './selectors/expenses';
 import './styles/styles.scss';
 import 'normalize.css/normalize.css';
 
+const store = configureStore();
 
-const AddExpensePage = () =>(
-  <div>
-    This is my AddExpense component
-  </div>
-);
-const EditExpensePage = () =>(
-  <div>
-    This is my Edit component
-  </div>
-);
-const HelpPage = () =>(
-  <div>
-    This is my Help component
-  </div>
-);
-const NotFoundPage = () =>(
-  <div>
-    404!
-  </div>
-);
+store.dispatch(addExpense({ description: 'Water bill', amount: 3437}));
+store.dispatch(addExpense({ description: 'Gas bill', amount: 7600}));
+store.dispatch(setTextFilter('bill'));
 
+const state = store.getState();
+const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
 
+console.log(visibleExpenses);
 
-const routes = (
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<FiKoDashboardPage/>} exact={true}/>
-      <Route path="/create" element={<AddExpensePage/>}/>
-      <Route path="/edit" element={<EditExpensePage/>}/>
-      <Route path="/help" element={<HelpPage/>}/>
-      <Route element={<NotFoundPage/>}/>
-    </Routes>
-  </BrowserRouter>
-
-);
-
-ReactDOM.render(routes, document.getElementById('app'));
+ReactDOM.render(<AppRouter></AppRouter>, document.getElementById('app'));
 
 
