@@ -10,9 +10,6 @@ const SideNavBar = () =>(
       to="/create" 
       className={({ isActive }) => (isActive ? 'is-active' : 'is-inactive')}>Add expense</NavLink>
     <NavLink 
-      to="/edit"   
-      className={({ isActive }) => (isActive ? 'is-active' : 'is-inactive')}>Edit expense</NavLink>
-    <NavLink 
       to="/help"   
       className={({ isActive }) => (isActive ? 'is-active' : 'is-inactive')}>Need help?</NavLink>
   </div>
