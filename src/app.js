@@ -4,11 +4,6 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import './styles/styles.scss';
 import 'normalize.css/normalize.css';
 
-const FiKoDashboardPage = () =>(
-  <div>
-    This is from my dashboard component
-  </div>
-);
 
 const AddExpensePage = () =>(
   <div>
