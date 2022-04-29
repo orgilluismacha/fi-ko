@@ -13,7 +13,8 @@
     "webpack-dev-server": "^4.7.4"
   },
   "scripts": {
-    "build": "webpack",
+    "build:dev": "webpack",
+    "build:prod": "webpack --env production --mode=production",
     "dev-server": "webpack-dev-server",
     "build-playground": "npx babel src/playground/counter-example.js --out-file=public/scripts/app.js --presets=@babel/preset-env,@babel/preset-react --watch",
     "serve": "live-server public"
@@ -24,6 +25,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "css-loader": "^6.6.0",
     "live-server": "^1.1.0",
+    "mini-css-extract-plugin": "^2.6.0",
     "moment": "^2.29.1",
     "normalize.css": "^8.0.1",
     "react": "^17.0.2",

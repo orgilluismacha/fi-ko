@@ -18,6 +18,7 @@ const EditExpensePage = (props) =>{
           navigate('/');
         }}
       />
+
       <button onClick={(e) => {
         props.dispatch(removeExpense({id: params.id}));
         navigate('/');
