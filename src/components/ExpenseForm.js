@@ -40,7 +40,6 @@ export default class ExpenseForm extends React.Component {
     if(createdAt){
       this.setState(() => ({ createdAt}));
     }
-
   };
 
   onFocusChange = ({ focused }) => {
@@ -61,7 +60,7 @@ export default class ExpenseForm extends React.Component {
     
     if(!this.state.description || !this.state.amount){
       // Set error state equal to "Please provide description and amount."
-      this.setState(() => ({error: 'ADD WHAT??'}));
+      this.setState(() => ({error: 'Please check if the values you have entered is valid.'}));
       console.log('bruh');
     } else {
       // Clear the error
@@ -108,7 +107,7 @@ export default class ExpenseForm extends React.Component {
         <textarea
           value={this.state.note}
           onChange={this.onNoteChange}
-          placeholder="Add a note for your expense (optional)">
+          placeholder="Addd a note for your expense (optional)">
         </textarea>
 
         <button>Add</button>
@@ -116,5 +115,4 @@ export default class ExpenseForm extends React.Component {
     </div>
     )
   }
-
 };
