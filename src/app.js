@@ -11,6 +11,7 @@ import 'normalize.css/normalize.css';
 
 const store = configureStore();
 
+
 store.dispatch(addExpense({ description: 'Water bill', amount: 5400, createdAt:500}));
 store.dispatch(addExpense({ description: 'Gas bill', amount: 7600, createdAt:1000}));
 store.dispatch(addExpense({ description: 'Electricity bill', amount: 3000, createdAt:2000}));
