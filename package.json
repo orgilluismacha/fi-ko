@@ -17,7 +17,9 @@
     "build:prod": "webpack --mode production",
     "dev-server": "webpack-dev-server",
     "build-playground": "npx babel src/playground/counter-example.js --out-file=public/scripts/app.js --presets=@babel/preset-env,@babel/preset-react --watch",
-    "serve": "live-server public"
+    "serve": "live-server public",
+    "start": "node server/server.js",
+    "heroku-postbuild": "npm run build:prod"
   },
   "description": "",
   "dependencies": {
