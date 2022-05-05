@@ -5,26 +5,7 @@ import { removeExpense } from '../actions/expenses.js';
 import moment from "moment";
 import numeral from "numeral";
 
-numeral.register('locale', 'hu', {
-  delimiters: {
-    thousands: ' ',
-    decimal: ','
-  },
-  abbreviations: {
-    thousand: 'E',  // ezer
-    million: 'M',   // millió
-    billion: 'Mrd', // milliárd
-    trillion: 'T'   // trillió
-  },
-  ordinal: function (number) {
-    return '.';
-  },
-  currency: {
-    symbol: ' Ft'
-  }
-});
 
-numeral.locale('hu');
 
 const ExpenseListItem = ({ dispatch, id, description, amount, createdAt }) => (
   <div>
