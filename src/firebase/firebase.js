@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 //import * as firebase from "firebase/database";
 import { validateCallback } from "@firebase/util";
+import { GoogleAuthProvider } from "firebase/auth";
 import { getDatabase, ref, set, remove, update, onValue, on, get, push, child, onChildRemoved, onChildChanged, onChildAdded } from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -24,9 +25,10 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
+export const googleAuthProvider = new GoogleAuthProvider();
 // Get the database
 export const db = getDatabase();
-
+ 
 
 // function addExpense(description, note, amount, createdAt) {
 //   const db = getDatabase();
