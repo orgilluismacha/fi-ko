@@ -11,7 +11,7 @@ import { BrowserRouter as Router, useNavigate, useLocation, Routes, Route, Switc
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import {login, logout} from '../actions/auth';
 import { connect, useSelector } from "react-redux";
-import { startAddExpense } from '../actions/expenses';
+import { startAddExpense, startSetExpenses } from '../actions/expenses';
 
 const auth = getAuth();
 const Root = (props) => {
@@ -28,13 +28,16 @@ const Root = (props) => {
         if (location.pathname === '/') {
           isLoggedIn = true;
           navigate('/dashboard');
+          props.dispatch(startSetExpenses());
           console.log('logged in');
         }
       } else {
-        
-        props.dispatch(logout());
-        navigate('/');
-        console.log('logged out');
+        if(location.pathname !== '/help'){
+          props.dispatch(logout());
+          navigate('/');
+          console.log('logged out');
+
+        }
       }
     });
 

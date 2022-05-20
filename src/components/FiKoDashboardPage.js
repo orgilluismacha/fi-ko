@@ -10,7 +10,7 @@ const FiKoDashboardPage = (props) => {
   useEffect(()=>{
     props.dispatch(startSetExpenses());
   });
-
+  
   return (
     <div>
       <ExpenseForm
@@ -27,5 +27,10 @@ const FiKoDashboardPage = (props) => {
   );
 }
 
+const mapStateToProps = (state) => {
+  return {
+    expenses: startSetExpenses(state.expenses, state.filters)
+  };
+};
 
-export default connect()(FiKoDashboardPage);
+export default connect(mapStateToProps)(FiKoDashboardPage);
