@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import AddExpensePage from '../components/AddExpensePage';
 import EditExpensePage from '../components/EditExpensePage';
 import FiKoDashboardPage from '../components/FiKoDashboardPage';
 import Header from '../components/Header';

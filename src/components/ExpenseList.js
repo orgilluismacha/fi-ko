@@ -25,8 +25,14 @@ numeral.register('locale', 'hu', {
 
 numeral.locale('hu');
 const ExpenseList = (props) => (
-  <div>
-    <h1>Expense list</h1>
+  <div className="content-container">
+    <div className="list-header">
+      <div>Expense</div>
+      <div>Amount </div>
+      <div>
+        
+      </div>
+    </div>
       {props.expenses.map((expense) => {
         return <ExpenseListItem key={expense.id} {...expense} />
       })

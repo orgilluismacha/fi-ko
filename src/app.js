@@ -4,9 +4,9 @@ import { Provider } from 'react-redux';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { startSetExpenses } from './actions/expenses';
+import LoadingPage from './components/LoadingPage';
 
 import history from './routers/history';
-
 import { login, logout } from './actions/auth';
 import { setTextFilter } from './actions/filters';
 import getVisibleExpenses from './selectors/expenses';
@@ -37,7 +37,8 @@ const jsx = (
   </Provider>
 );
 
-ReactDOM.render(<p>Loading..</p>, document.getElementById('app'));
+ReactDOM.render(<LoadingPage/>, document.getElementById('app'));
+
 store.dispatch(startSetExpenses()).then(() => {
   ReactDOM.render(jsx, document.getElementById('app'));
 });

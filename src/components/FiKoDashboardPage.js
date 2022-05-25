@@ -3,21 +3,26 @@ import ExpenseForm from "./ExpenseForm";
 import ExpenseList from "./ExpenseList";
 import ExpenseListFilters from "./ExpenseListFilters";
 import ExpensesSummary from "./ExpensesSummary";
+import SideNavBar from '../components/SideNavBar';
 import { connect } from "react-redux";
 import { startAddExpense, startSetExpenses } from "../actions/expenses";
 
 const FiKoDashboardPage = (props) => {
-  useEffect(()=>{
+  useEffect(() => {
     props.dispatch(startSetExpenses());
   });
-  
+
   return (
     <div>
-      <ExpenseForm
-        onSubmit={(expense) => {
-          props.dispatch(startAddExpense(expense));
-        }}
-      />
+      <SideNavBar />
+      <div className="content-container">
+
+        <ExpenseForm
+          onSubmit={(expense) => {
+            props.dispatch(startAddExpense(expense));
+          }}
+        />
+      </div>
 
       <ExpensesSummary />
       <ExpenseListFilters />

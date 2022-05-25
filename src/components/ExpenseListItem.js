@@ -8,16 +8,29 @@ import numeral from "numeral";
 
 
 const ExpenseListItem = ({ dispatch, id, description, amount, createdAt }) => (
-  <div>
-    <Link to={`/edit/${id}`}>
-      {description}
-    </Link>
-    {numeral(amount).format('0,0[.]00 $')} {moment(createdAt).format('MMMM Do, YYYY')}
-    <button onClick={(e) => {
-      dispatch(startRemoveExpense({ id }));
-      console.log(id);
+  <div >
+    <Link className="list-item" to={`/edit/${id}`}>
+      <div>
+        <h3>{description}</h3>
+        {moment(createdAt).format('MMMM Do, YYYY')}
+      </div>
 
-    }}>Remove</button>
+      <div>
+        <span>{numeral(amount).format('0,0[.]00 $')}</span>
+        <div>
+        <button className="button"onClick={(e) => {
+          dispatch(startRemoveExpense({ id }));
+          console.log(id);
+
+        }}>Remove</button>
+
+        </div>
+      </div>
+
+    </Link>
+
+
+
 
   </div>
 );

@@ -1,0 +1,30 @@
+.list-header{
+  background: #f7f7f7;
+  border: 1px solid darken(#f7f7f7, 7%);
+  color: hsl(0, 0%, 40%);
+  display: flex;
+  justify-content: space-between;
+  padding: $s-size $m-size;
+
+
+}
+
+.list-item{
+  border: 1px solid darken(#f7f7f7, 7%);
+  border-top: none;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  padding: $s-size;
+  text-decoration: none;
+  transition: background .3s ease;
+  &:hover{
+    background: #f7f7f7;
+  }
+  @media(min-width: $desktop-breakpoint){
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: $m-size;
+  }
+}

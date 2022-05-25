@@ -1,0 +1,20 @@
+.text-input{
+  border: 1px solid #cacccd;
+  height: 30px;
+  padding: $s-size;
+  font-size: $font-size-large;
+  font-weight: 300;
+}
+
+.select{
+  @extend .text-input;
+}
+
+.textarea{
+  @extend .text-input;
+  height: 7rem;
+  width:100%;
+  resize: none;
+}
+
+
